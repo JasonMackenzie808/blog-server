@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!ENTITY upright "">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Server</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&family=Paytone+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header-container">
+      <a href="https://www.uprighted.com/"><img src="upright.png" /> </a>
+      <a href="http://localhost:4000" id="blog-link">
+        <header>SDB July Blog</header>
+      </a>
+    </div>
+
+    <!-- TABLE SECTION-->
+    <table>
+      <thead>
+        <tr>
+          <th>Entry #:</th>
+          <th>Title:</th>
+          <th>Author:</th>
+          <th>Entry:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>First Blog Post</td>
+          <td>Paul Niemczyk</td>
+          <td>These student devs keep getting younger and smarter.</td>
+          <td><button>Edit</button></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Test entry</td>
+          <td>A hopeful programmer</td>
+          <td>This is a test to see if it updates an entry properly.</td>
+          <td><button>Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <!--TABLE SECTION END-->
+
+    <div class="main-container">
+      <!--NEW ENTRY FORM-->
+      <div class="form-container">
+        <h2>Submit an Entry</h2>
+        <form id="new-entry-form">
+          <!--FORM FIELD ENTRY TITLE-->
+          <label for="entry-title">Entry Title:</label>
+          <input type="text" name="entry-title" id="entry-title" />
+          <!--FORM FIELD AUTHOR-->
+          <label for="author">Author:</label>
+          <input type="text" name="author" id="author" />
+          <!--FORM FIELD BODY-->
+          <label for="body">Entry:</label>
+          <input type="text" name="body" id="body" />
+          <input type="submit" value="SUBMIT" />
+        </form>
+      </div>
+      <!--NEW ENTRY FORM END-->
+      <!--DELETE ENTRY FORM-->
+      <div class="form-container">
+        <h2>Delete an Entry</h2>
+        <form id="delete-entry-form">
+          <!-- Form Field -->
+          <label for="delete-entry">Choose an entry:</label>
+          <select name="delete-entry" id="delete-entry">
+            <option value="0">Entry 1</option>
+            <option value="1">Entry 2</option>
+          </select>
+          <input type="submit" value="Delete Entry" />
+        </form>
+      </div>
+      <!--DELETE ENTRY FORM END-->
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
