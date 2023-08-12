@@ -20,17 +20,36 @@ router.get("/entries", (req, res) => {
 });
 
 //!------------------------------------------------------------
-// Get Specific Entry By ID Endpoint
+// Get Specific Entry By Author Endpoint
 
-router.get("/search-entry", (req, res) => {
-  const { id } = req.body;
+router.get("/search-entry/:author", (req, res) => {
+  const { author } = req.params;
+  console.log(req.params);
   let entriesArray = read();
   console.log(entriesArray);
 
-  let entryInfo = findOne(entriesArray, id);
+  let entryInfo = findOne(entriesArray, author);
   console.log(entryInfo);
   if (entryInfo === undefined) {
-    res.json({ error: "Invalid entry id" });
+    res.json({ error: "Invalid entry author" });
+  } else {
+    res.json({ message: "Entry found.", entry: entryInfo });
+  }
+});
+
+//!------------------------------------------------------------
+
+//Get Specific Entry By ID Endpoint
+
+router.get("/get-by-id/:id", (req, res) => {
+  const { id } = req.params;
+  console.log(req.params);
+  let entriesArray = read();
+
+  let entryInfo = findOneById(entriesArray, id);
+
+  if (entryInfo === undefined) {
+    res.json({ error: "Invalid entry ID" });
   } else {
     res.json({ message: "Entry found.", entry: entryInfo });
   }
@@ -57,21 +76,21 @@ router.post("/new-entry", (req, res) => {
 // Update Entry Endpoint
 
 router.patch("/update-entry/", (req, res) => {
-const { id } = req.query;
-//Read file
-let entriesArray = read();
-// Modifying the data
-entriesArray = updateOne(entriesArray, id, req.body);
+  const { id } = req.query;
+  //Read file
+  let entriesArray = read();
+  // Modifying the data
+  entriesArray = updateOne(entriesArray, id, req.body);
 
-// Save the data to the file
-save(entriesArray)
-res.json({ message: "Successfully Updated Entry", entries: entriesArray });
-})
+  // Save the data to the file
+  save(entriesArray);
+  res.json({ message: "Successfully Updated Entry", entries: entriesArray });
+});
 
 //!------------------------------------------------------------
 // Delete Entry Endpoint
 
-router.delete("delete-entry/:id", (req, res) => {
+router.delete("/delete-entry/:id", (req, res) => {
   const { id } = req.params;
   // Read File
   let entriesArray = read();
@@ -99,9 +118,20 @@ function save(data) {
   fs.writeFileSync(dbPath, JSON.stringify(data));
 }
 
-// ! Find Function
+// ! Find Functions
 
-function findOne(array, id) {
+function findOne(array, author) {
+  let userEntry = array.filter(
+    (entry) => entry.author.toLowerCase() === author.toLowerCase()
+  );
+  if (userEntry.length > 0) {
+    return userEntry;
+  } else {
+    return undefined;
+  }
+}
+
+function findOneById(array, id) {
   let userEntry = array.filter((entry) => entry.post_id === id);
   if (userEntry.length > 0) {
     return userEntry[0];

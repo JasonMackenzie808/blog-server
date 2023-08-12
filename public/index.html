@@ -18,36 +18,60 @@
         <header>SDB July Blog</header>
       </a>
     </div>
+    <div class="blog_header-graphic"></div>
+    <div class="entry-header-container">
+      <h2 id="entry-section-header">User Entries</h2>
+    </div>
 
     <!-- TABLE SECTION-->
-    <table>
-      <thead>
-        <tr>
-          <th>Entry #:</th>
-          <th>Title:</th>
-          <th>Author:</th>
-          <th>Entry:</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>First Blog Post</td>
-          <td>Paul Niemczyk</td>
-          <td>These student devs keep getting younger and smarter.</td>
-          <td><button>Edit</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Test entry</td>
-          <td>A hopeful programmer</td>
-          <td>This is a test to see if it updates an entry properly.</td>
-          <td><button>Edit</button></td>
-        </tr>
-      </tbody>
-    </table>
-    <!--TABLE SECTION END-->
 
+    <div class="table-container">
+      <table id="entry-table">
+        <thead>
+          <tr>
+            <th>Entry #:</th>
+            <th>Title:</th>
+            <th>Author:</th>
+            <th>Entry:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>First Blog Post</td>
+            <td>Paul Niemczyk</td>
+            <td>These student devs keep getting younger and smarter.</td>
+            <td><button>Edit</button></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Test entry</td>
+            <td>A hopeful programmer</td>
+            <td>This is a test to see if it updates an entry properly.</td>
+            <td><button>Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!--TABLE SECTION END-->
+    <!-- SEARCH FORM START-->
+    <div class="search-form-container">
+      <form id="search-form">
+        <input
+          id="search-input"
+          type="text"
+          name="query"
+          placeholder="Enter author name here..."
+        />
+        <input
+          type="submit"
+          value="SEARCH"
+          id="search-btn"
+          onclick="findEntryByAuthor(event)"
+        />
+      </form>
+    </div>
+    <!-- SEARCH FORM END-->
     <div class="main-container">
       <!--NEW ENTRY FORM-->
       <div class="form-container">
@@ -62,7 +86,7 @@
           <!--FORM FIELD BODY-->
           <label for="body">Entry:</label>
           <input type="text" name="body" id="body" />
-          <input type="submit" value="SUBMIT" />
+          <input type="submit" value="SUBMIT" onclick="createNewEntry(event)" />
         </form>
       </div>
       <!--NEW ENTRY FORM END-->
@@ -76,7 +100,11 @@
             <option value="0">Entry 1</option>
             <option value="1">Entry 2</option>
           </select>
-          <input type="submit" value="Delete Entry" />
+          <input
+            type="submit"
+            value="Delete Entry"
+            onclick="deleteEntry(event)"
+          />
         </form>
       </div>
       <!--DELETE ENTRY FORM END-->
