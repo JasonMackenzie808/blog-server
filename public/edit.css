@@ -24,9 +24,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
   }
   label {
-   
+    text-align: center;
     font-family: "Paytone One", sans-serif;
     display: block;
     font-size: 20px;
@@ -34,16 +35,23 @@
     color: white;
   }
   input[type="text"] {
-    width: 50vw;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  textarea {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
   }
   
   input[type="submit"] {
     margin-top: 1.5em;
+    margin-right: auto;
+    margin-left: auto;
     background: white;
     padding: 12px 20px;
-    width: 50vw;
+    width: 50%;
     border: none;
     border-radius: 4px;
     font-family: "Paytone One", sans-serif;

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!ENTITY upright "">
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +14,7 @@
     <div class="header-container">
       <a href="https://www.uprighted.com/"><img src="upright.png" /> </a>
       <a href="http://localhost:4000" id="blog-link">
-        <header>SDB July Blog</header>
+        <header>SDB July 2023 Blog</header>
       </a>
     </div>
     <div class="blog_header-graphic"></div>
@@ -29,26 +28,31 @@
       <table id="entry-table">
         <thead>
           <tr>
-            <th>Entry #:</th>
-            <th>Title:</th>
-            <th>Author:</th>
-            <th>Entry:</th>
+            <th class="id-column">#</th>
+            <th class="title-column">Title:</th>
+            <th class="author-column">Author:</th>
+            <th class="body-column">Entry:</th>
+            <th class="edit-column"></th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>First Blog Post</td>
-            <td>Paul Niemczyk</td>
-            <td>These student devs keep getting younger and smarter.</td>
-            <td><button>Edit</button></td>
+            <td class="id-column">1</td>
+            <td class="title-column">First Blog Post</td>
+            <td class="author-column">Paul Niemczyk</td>
+            <td class="body-column">
+              These student devs keep getting younger and smarter.
+            </td>
+            <td class="edit-column"><button>Edit</button></td>
           </tr>
           <tr>
-            <td>2</td>
-            <td>Test entry</td>
-            <td>A hopeful programmer</td>
-            <td>This is a test to see if it updates an entry properly.</td>
-            <td><button>Edit</button></td>
+            <td class="id-column">2</td>
+            <td class="title-column">Test entry</td>
+            <td class="author-column">A hopeful programmer</td>
+            <td class="body-column">
+              This is a test to see if it updates an entry properly.
+            </td>
+            <td class="edit-column"><button>Edit</button></td>
           </tr>
         </tbody>
       </table>
@@ -85,7 +89,8 @@
           <input type="text" name="author" id="author" />
           <!--FORM FIELD BODY-->
           <label for="body">Entry:</label>
-          <input type="text" name="body" id="body" />
+          <textarea name="body" id="body" cols="1" rows="5"></textarea>
+          <!-- <input type="text" name="body" id="body" /> -->
           <input type="submit" value="SUBMIT" onclick="createNewEntry(event)" />
         </form>
       </div>

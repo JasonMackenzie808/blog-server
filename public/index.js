@@ -49,11 +49,11 @@ function displayEntries(entries) {
   for (let i = 0; i < entries.length; i++) {
     let newRows = `
     <tr>
-    <td>${i + 1}</td>
-    <td>${entries[i].title}</td>
-    <td>${entries[i].author}</td>
-    <td>${entries[i].body}</td>
-    <td><button onclick="goToEditURL('${
+    <td class="id-column">${i + 1}</td>
+    <td class="title-column">${entries[i].title}</td>
+    <td class="author-column">${entries[i].author}</td>
+    <td class="body-column">${entries[i].body}</td>
+    <td class="edit-column"><button onclick="goToEditURL('${
       entries[i].post_id
     }')">Edit</button></td>
   </tr>`;
