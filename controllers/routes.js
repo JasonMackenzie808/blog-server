@@ -10,7 +10,7 @@ let endpoint = {
   updateEntry: "http://localhost:4000/routes/update-entry/",
   deleteEntry: "http://localhost:4000/routes/delete-entry",
 };
-//!------------------------------------------------------------
+
 // Get All Entries Endpoint
 
 router.get("/entries", (req, res) => {
@@ -19,7 +19,6 @@ router.get("/entries", (req, res) => {
   res.json({ message: "Success", entries: entriesArray });
 });
 
-//!------------------------------------------------------------
 // Get Specific Entry By Author Endpoint
 
 router.get("/search-entry/:author", (req, res) => {
@@ -37,8 +36,6 @@ router.get("/search-entry/:author", (req, res) => {
   }
 });
 
-//!------------------------------------------------------------
-
 //Get Specific Entry By ID Endpoint
 
 router.get("/get-by-id/:id", (req, res) => {
@@ -55,7 +52,6 @@ router.get("/get-by-id/:id", (req, res) => {
   }
 });
 
-//!------------------------------------------------------------
 // Create New Entry Endpoint
 
 router.post("/new-entry", (req, res) => {
@@ -72,7 +68,6 @@ router.post("/new-entry", (req, res) => {
   res.json({ message: "Successfully added entry", entries: entriesArray });
 });
 
-//!------------------------------------------------------------
 // Update Entry Endpoint
 
 router.patch("/update-entry/", (req, res) => {
@@ -87,7 +82,6 @@ router.patch("/update-entry/", (req, res) => {
   res.json({ message: "Successfully Updated Entry", entries: entriesArray });
 });
 
-//!------------------------------------------------------------
 // Delete Entry Endpoint
 
 router.delete("/delete-entry/:id", (req, res) => {
@@ -102,7 +96,6 @@ router.delete("/delete-entry/:id", (req, res) => {
   res.json({ message: "Successfully deleted entry.", entries: entriesArray });
 });
 
-//!------------------------------------------------------------
 // Helper Functions
 
 // ! Read Function
@@ -156,6 +149,7 @@ function updateOne(originalArray, id, updatedInfo) {
 // ! Delete Function
 
 // Deleting
+
 function removeOne(originalArray, id) {
   let modifiedArray = originalArray.filter((item) => item.post_id !== id);
   return modifiedArray;

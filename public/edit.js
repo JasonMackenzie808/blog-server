@@ -1,4 +1,4 @@
-// TODO: Grab the Id from the query string
+// TODO: Grab the ID from the query string
 
 let queryParams = new URLSearchParams(window.location.search);
 let id = queryParams.get("id");
@@ -41,7 +41,7 @@ form.addEventListener("submit", async function (event) {
     body: entryBody.value,
   };
   await updateEntry(entry);
-  window.location.href = "index.html"
+  window.location.href = "index.html";
 });
 
 // TODO: Update the Entry

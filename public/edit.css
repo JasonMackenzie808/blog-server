@@ -1,66 +1,66 @@
 :root {
-    --primary: #ff532f;
-  }
-  body {
-    background-color:white;
-  }
+  --primary: #ff532f;
+}
+body {
+  background-color: white;
+}
 .form-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--primary);
-    width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    border-radius: 4px;
-  }
-  h2 {
-    font-family: "Paytone One", sans-serif;
-    color: white;
-    font-size: 2em;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-  label {
-    text-align: center;
-    font-family: "Paytone One", sans-serif;
-    display: block;
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
-  }
-  input[type="text"] {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  textarea {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  input[type="submit"] {
-    margin-top: 1.5em;
-    margin-right: auto;
-    margin-left: auto;
-    background: white;
-    padding: 12px 20px;
-    width: 50%;
-    border: none;
-    border-radius: 4px;
-    font-family: "Paytone One", sans-serif;
-    color: var(--primary);
-    font-size: 18px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 4px;
+}
+h2 {
+  font-family: "Paytone One", sans-serif;
+  color: white;
+  font-size: 2em;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+label {
+  text-align: center;
+  font-family: "Paytone One", sans-serif;
+  display: block;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+input[type="text"] {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+textarea {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input[type="submit"] {
+  margin-top: 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  padding: 12px 20px;
+  width: 50%;
+  border: none;
+  border-radius: 4px;
+  font-family: "Paytone One", sans-serif;
+  color: var(--primary);
+  font-size: 18px;
+}
+
 input[type="submit"]:hover {
-    background: #ffc19a;
-    color: #7a0917;
-    cursor: pointer;
-  }
+  background: #ffc19a;
+  color: #7a0917;
+  cursor: pointer;
+}

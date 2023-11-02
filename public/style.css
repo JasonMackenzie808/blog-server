@@ -4,6 +4,7 @@
 body {
   margin: 0;
 }
+
 /* STYLING */
 
 /* HEADER */
@@ -74,8 +75,6 @@ th {
   font-family: "Paytone One", sans-serif;
   color: black;
   background: white;
-  
- 
 }
 td {
   padding: 8px;
@@ -110,7 +109,7 @@ tr:hover {
 .body-column {
   width: 50%;
   white-space: pre-line;
-  word-wrap:break-word;
+  word-wrap: break-word;
 }
 
 .edit-column {
@@ -143,6 +142,7 @@ tr:hover {
   background: #ffc19a;
   cursor: pointer;
 }
+
 /* Form Styles */
 
 .form-container {
@@ -179,6 +179,7 @@ select {
   width: 100%;
   margin-bottom: 1.5em;
 }
+
 /* Form Submit Button Styles */
 
 input[type="submit"] {

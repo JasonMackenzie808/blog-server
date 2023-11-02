@@ -1,5 +1,3 @@
-console.log("it works");
-
 //Declarations
 
 let newEntryForm = document.getElementById("new-entry-form");
@@ -12,8 +10,6 @@ let entryBody = document.getElementById("body");
 let searchInput = document.getElementById("search-input");
 let searchButton = document.getElementById("search-btn");
 
-//!------------------------------------------
-
 // Server Endpoints
 
 let endpoint = {
@@ -22,8 +18,6 @@ let endpoint = {
   updateEntry: "http://localhost:4000/routes/update-entry/",
   deleteEntry: "http://localhost:4000/routes/delete-entry/",
 };
-
-//!----------------------------------------
 
 async function getAllEntries() {
   try {
@@ -36,9 +30,8 @@ async function getAllEntries() {
   }
 }
 
-//!----------------------------------------
-
 // Display Entries
+
 let numberT;
 function displayEntries(entries) {
   // Fishing for the table body
@@ -66,8 +59,6 @@ function displayEntries(entries) {
 
 getAllEntries();
 
-//!----------------------------------------
-
 // Find Entry By Author
 
 async function findEntryByAuthor(event) {
@@ -88,8 +79,6 @@ async function findEntryByAuthor(event) {
     console.error(error);
   }
 }
-
-//!----------------------------------------
 
 // Create New Entry
 
@@ -125,8 +114,6 @@ async function createNewEntry(event) {
   author.value = "";
   entryBody.value = "";
 }
-
-//!----------------------------------------
 
 // Populate the Delete Dropdown
 
@@ -165,8 +152,6 @@ async function deleteEntry(event) {
     console.log(error);
   }
 }
-
-//!----------------------------------------
 
 //Update Entries
 
